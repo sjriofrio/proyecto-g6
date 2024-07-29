@@ -1,0 +1,178 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.navbar {
+  background-color: #5abbae;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.navbar-logo h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+}
+
+.navbar-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.navbar-links ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-icons {
+  margin-left: auto;
+}
+
+.navbar-icon {
+  color: white;
+  font-size: 18px;
+  margin-left: 15px;
+}
+
+.welcome-section {
+  background-color: #b2c0cf;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.property-card {
+  display: flex;
+  width: 1000px;
+  border: 5px solid #168594;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Añade una transición suave */
+  margin: 10px;
+  ;
+}
+.property-card:hover {
+  transform: scale(1.1); /* Aumenta el tamaño cuando el cursor está sobre el elemento */
+}
+
+.property-image {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: auto;
+
+}
+
+.property-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.arrow-left,
+.arrow-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(126, 187, 202, 0.5);
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.arrow-left {
+  left: 16px;
+}
+.custom-btn {
+  background-color: #61b0c4; /* Aquí puedes especificar el color que desees */
+  color: white; /* Cambia el color del texto si es necesario */
+  /* Puedes agregar más estilos según tus necesidades */
+}
+
+.arrow-right {
+  right: 16px;
+}
+
+.property-details {
+  padding: 20px;
+  flex: 1;
+}
+
+.property-price {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.property-location,
+.property-address,
+.property-area,
+.property-description,
+.property-features {
+  margin-bottom: 8px;
+}
+
+.property-features {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.property-feature {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  margin-bottom: 8px;
+}
+
+.property-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.property-action {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.property-action:first-child {
+  background-color: #0f718f;
+  color: #fff;
+}
+
+.property-action:nth-child(2) {
+  background-color: #5dc9d1;
+  color: #fff;
+}
+
+.property-action:last-child {
+  background-color: #ff6347;
+  color: #fff;
+}

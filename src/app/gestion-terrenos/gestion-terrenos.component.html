@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Gestión de Solicitantes</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/nav']" routerLinkActive="active">
+          <i class="fas fa-home"></i> <span>Inicio</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/solicitante']" routerLinkActive="active">
+          <i class="fas fa-users"></i> <span>Solicitantes</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/escritura']" routerLinkActive="active">
+          <i class="fas fa-file-alt"></i> Escritura
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-envelope"></i> <span>Correo</span>
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
+<div class="container">
+  <h1 class="my-4">Bienvenido a la Gestión de Terreno</h1>
+  <div class="table-container">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>N°Cédula</th>
+          <th>Ciudad</th>
+          <th>Correo electrónico</th>
+          <th>Terrenos Escogidos</th>
+          <th>Archivo de Pago</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let terreno of terreno ">
+          <td>{{ terreno.firstName }}</td>
+          <td>{{ terreno.lastName }}</td>
+          <td>{{ terreno.Cedula }}</td>
+          <td>{{ terreno.City }}</td>
+          <td>{{ terreno.Email }}</td>
+          <td>{{ terreno.terreno }}</td>
+          <td>{{ terreno.Document }}</td>
+          <td>{{ terreno.status }}</td>
+          <td>
+            <button class="btn btn-success btn-sm" *ngIf="terreno.status=== 'Pendiente'" (click)="approveTerreno(terreno)">
+              <i class="fas fa-check"></i> Aceptar
+            </button>
+            <button class="btn btn-danger btn-sm" *ngIf="terreno.status === 'Pendiente'" (click)="dessaproveTerreno(terreno)">
+              <i class="fas fa-times"></i> Desaprobar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="btn btn-secondary mt-4" (click)="goBack()">
+    <i class="fas fa-arrow-left"></i> Regresar
+  </button>
+</div>
+<footer class="text-white text-center py-3">
+  <div class="container">
+    <h5>Elabodorado por ITIN ESPE 2024</h5>
+    <p>&copy; 2024 ESPE. Todos los derechos reservados. Equipo Land Manager</p>
+  </div>
+</footer>

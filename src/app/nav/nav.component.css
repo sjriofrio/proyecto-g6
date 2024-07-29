@@ -1,0 +1,160 @@
+/* Navbar styles */
+.navbar {
+  background-color: #3498db !important; /* Cambia el color de fondo del navbar a azul claro */
+}
+
+.navbar-text {
+  margin-right: 10px; /* Ajusta según sea necesario */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #ffffff; /* Texto blanco */
+  font-size: 1.5em; /* Tamaño de fuente más grande */
+}
+
+.navbar-nav .nav-link {
+  color: #e0f7fa; /* Texto celeste claro */
+  margin-right: 15px;
+  font-size: 1.2em; /* Tamaño de fuente ligeramente más grande */
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-link i {
+  margin-right: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff; /* Texto blanco al pasar el mouse */
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 767.98px) {
+  .navbar-nav .nav-item {
+    margin-bottom: 10px;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1em;
+  }
+}
+
+/* Card styles */
+.card {
+  width: 100%;
+  max-width: 500px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(173, 26, 26, 0.2);
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+  }
+}
+/* Estilos para las tarjetas */
+.card {
+  width: 100%;
+  max-width: 400px; /* Ajusta el ancho máximo según sea necesario */
+  margin: 20px;
+  border: 1px solid #ccc; /* Borde delgado gris */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Efecto de levantamiento al pasar el mouse */
+}
+
+.card-header {
+  background-color: #007bff; /* Fondo azul celeste para el encabezado */
+  color: #ffffff; /* Texto blanco */
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-header h3 {
+  font-size: 1.5rem; /* Tamaño de fuente del título */
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-footer {
+  background-color: #f8f9fa; /* Fondo gris claro para el pie de página */
+  color: #6c757d; /* Texto gris */
+  padding: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+  }
+}
+
+/* Additional styles */
+/* Espaciado entre los íconos y el texto */
+.navbar-nav .nav-link .fas {
+  margin-right: 5px;
+}
+
+/* Disposición del footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #76aacc; /* Fondo azul claro */
+  color: #ffffff; /* Texto blanco */
+}
+
+.container.mt-5 {
+  margin-top: 5rem !important;
+}
+footer {
+  background-color: #76aacc; /* Fondo azul claro */
+  color: #ffffff; /* Texto blanco */
+  padding: 20px 0; /* Añade espacio interno arriba y abajo */
+}
+
+footer h5 {
+  margin-bottom: 10px; /* Espacio inferior para el título */
+}
+
+footer p {
+  margin-bottom: 10px; /* Espacio inferior para los párrafos */
+}
+.navbar-nav .nav-link .fas {
+  font-size: 1.2em; /* Tamaño de fuente para los íconos */
+  margin-right: 5px; /* Espacio a la derecha de los íconos */
+}
+.card-text {
+  text-align: justify;
+  max-width: 600px; /* ajusta el ancho máximo según tus necesidades */
+  margin: 0 auto; /* centra el párrafo horizontalmente */
+  padding: 10px; /* añade un padding para separar el texto del borde */
+  border: 1px solid #ccc; /* añade un borde para simular una tarjeta */
+  border-radius: 5px; /* redondea las esquinas del borde */
+  background-color: #f9f9f9; /* añade un color de fondo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* añade una sombra sutíl */
+  font-family: Arial, sans-serif; /* elige una fuente adecuada */
+  line-height: 1.6; /* ajusta el espaciado entre líneas */
+}

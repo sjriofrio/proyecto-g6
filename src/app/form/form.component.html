@@ -1,0 +1,188 @@
+<div class="container-fluid mt-5 mb-5 p-0">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">FORMULARIO DE REGISTRO</h5>
+                </div>
+                <div class="card-body">
+                  <form *ngIf="form" [formGroup]="form" (ngSubmit)="save($event)">                        <div class="form-group"
+                            [ngClass]="{ 'has-danger': form.get('nombre')?.invalid && form.get('nombre')?.touched, 'has-success': form.get('nombre')?.valid }">
+                            <label for="nombre">
+                                <i class="fas fa-user"></i> <!-- Agrega el icono de usuario -->
+                                <small><strong class="text-muted"> Nombres</strong></small>
+                            </label>
+                            <input class="form-control" formControlName="nombre" placeholder="Nombres" required />
+                            <div *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched" class="text-danger">
+                                Se requiere campo.
+                            </div>
+                        </div>
+                        <div class="form-group"
+                            [ngClass]="{ 'has-danger': form.get('apellido')?.invalid && form.get('apellido')?.touched, 'has-success': form.get('apellido')?.valid }">
+                            <label for="apellido">
+                                <i class="fas fa-user"></i> <!-- Icono de usuario -->
+                                <small><strong class="text-muted"> Apellidos</strong></small>
+                            </label>
+                            <input class="form-control" formControlName="apellido" placeholder="Apellidos" required />
+                            <div *ngIf="form.get('apellido')?.invalid && form.get('apellido')?.touched"
+                                class="text-danger">
+                                Se requiere campo.
+                            </div>
+                        </div>
+                        <div class="form-group"
+                            [ngClass]="{ 'has-danger': form.get('fechaNacimiento')?.invalid && form.get('fechaNacimiento')?.touched, 'has-success': form.get('fechaNacimiento')?.valid }">
+                            <label for="fechaNacimiento">
+                                <i class="fas fa-calendar-alt"></i> <!-- Icono de calendario -->
+                                <small><strong class="text-muted"> Fecha de Nacimiento</strong></small>
+                            </label>
+                            <input class="form-control" formControlName="fechaNacimiento" type="date" required />
+                            <div *ngIf="form.get('fechaNacimiento')?.invalid && form.get('fechaNacimiento')?.touched"
+                                class="text-danger">
+                                Se requiere campo.
+                            </div>
+                        </div>
+                        <div class="form-group"
+                            [ngClass]="{ 'has-danger': form.get('numeroCedula')?.invalid && form.get('numeroCedula')?.touched, 'has-success': form.get('numeroCedula')?.valid }">
+                            <label for="numeroCedula">
+                                <i class="fas fa-id-card"></i> <!-- Icono de tarjeta de identificación -->
+                                <small><strong class="text-muted">Número de Cédula</strong></small>
+                            </label>
+                            <input class="form-control" formControlName="numeroCedula" placeholder="Número de Cédula"
+                                [required]="true" />
+                            <div *ngIf="form.get('numeroCedula')?.invalid && form.get('numeroCedula')?.touched"
+                                class="text-danger">
+                                <div *ngIf="form.get('numeroCedula')?.errors?.['required']">Se requiere campo.</div>
+                                <div *ngIf="form.get('numeroCedula')?.errors?.['maxlength']">Máximo 10 caracteres.</div>
+                                <div *ngIf="form.get('numeroCedula')?.errors?.['pattern']">Solo números permitidos.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group"
+                            [ngClass]="{ 'has-danger': form.get('estadoCivil')?.invalid && form.get('estadoCivil')?.touched, 'has-success': form.get('estadoCivil')?.valid }">
+                            <label for="estadoCivil">
+                                <i class="fas fa-heart"></i> <!-- Icono de corazón -->
+                                <small><strong class="text-muted"> Estado Civil </strong></small>
+                            </label>
+                            <div>
+                                <label><input formControlName="estadoCivil" type="radio" value="Soltero(a)"
+                                        required />Soltero(a) </label>
+                                <label><input formControlName="estadoCivil" type="radio" value="Casado(a)"
+                                        required />Casado(a) </label>
+                                <label><input formControlName="estadoCivil" type="radio" value="Divorciado(a)"
+                                        required /> Divorciado(a) </label>
+                                <label><input formControlName="estadoCivil" type="radio" value="Viudo(a)"
+                                        required />Viudo(a) </label>
+                                <label><input formControlName="estadoCivil" type="radio" value="Unión Libre"
+                                        required />Unión Libre </label>
+                            </div>
+                            <div *ngIf="form.get('estadoCivil')?.invalid && form.get('estadoCivil')?.touched"
+                                class="text-danger">
+                                Se requiere campo.
+                            </div>
+                        </div>
+                        <div class="form-group"
+                            [ngClass]="{ 'has-danger': form.get('coloniaBarrio')?.invalid && form.get('coloniaBarrio')?.touched, 'has-success': form.get('coloniaBarrio')?.valid }">
+                            <label for="coloniaBarrio">
+                                <i class="fas fa-home"></i> <!-- Icono de casa -->
+                                <small><strong class="text-muted"> Colonia/Barrio y Número de Casa</strong></small>
+                            </label>
+                            <input class="form-control" formControlName="coloniaBarrio"
+                                placeholder="Colonia/Barrio y Número de Casa" required />
+                            <div *ngIf="form.get('coloniaBarrio')?.invalid && form.get('coloniaBarrio')?.touched"
+                                class="text-danger">
+                                Se requiere campo.
+                            </div>
+                        </div>
+                        <div class="form-group"
+                            [ngClass]="{ 'has-danger': form.get('ciudad')?.invalid && form.get('ciudad')?.touched, 'has-success': form.get('ciudad')?.valid }">
+                            <label for="ciudad">
+                                <i class="fas fa-city"></i> <!-- Icono de ciudad -->
+                                <small><strong class="text-muted"> Ciudad</strong></small>
+                            </label>
+                            <select class="form-control" formControlName="ciudad" required>
+                                <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ ciudad }}</option>
+                            </select>
+                            <div *ngIf="form.get('ciudad')?.invalid && form.get('ciudad')?.touched" class="text-danger">
+                                Debes seleccionar una ciudad.
+                            </div>
+                        </div>
+                        <div class="form-group"
+                            [ngClass]="{ 'has-danger': form.get('estadoProvincia')?.invalid && form.get('estadoProvincia')?.touched, 'has-success': form.get('estadoProvincia')?.valid }">
+                            <label for="estadoProvincia">
+                                <i class="fas fa-map-marker-alt"></i> <!-- Icono de marcador de posición en el mapa -->
+                                <small><strong class="text-muted"> Estado/Provincia</strong></small>
+                            </label>
+                            <select class="form-control" formControlName="estadoProvincia" required>
+                                <option *ngFor="let estadoProvincia of estadoProvincias" [value]="estadoProvincia">{{
+                                    estadoProvincia }}</option>
+                            </select>
+                            <div *ngIf="form.get('estadoProvincia')?.invalid && form.get('estadoProvincia')?.touched"
+                                class="text-danger">
+                                Debes seleccionar un estado/provincia.
+                            </div>
+                        </div>
+                        <div class="form-group"
+                            [ngClass]="{ 'has-danger': form.get('telefono')?.invalid && form.get('telefono')?.touched, 'has-success': form.get('telefono')?.valid }">
+                            <label for="telefono">
+                                <i class="fas fa-phone"></i>
+                                <small><strong class="text-muted"> Teléfono de Contacto</strong></small>
+                            </label>
+                            <input class="form-control" formControlName="telefono" placeholder="Teléfono de Contacto"
+                                [required]="true" />
+                            <div *ngIf="form.get('telefono')?.invalid && form.get('telefono')?.touched"
+                                class="text-danger">
+                                <div *ngIf="form.get('telefono')?.errors?.['required']">Se requiere campo.</div>
+                                <div *ngIf="form.get('telefono')?.errors?.['maxlength']">Máximo 10 caracteres.</div>
+                                <div *ngIf="form.get('telefono')?.errors?.['pattern']">Solo números permitidos.</div>
+                            </div>
+                        </div>
+                        <div class="form-group"
+                            [ngClass]="{ 'has-danger': form.get('correoElectronico')?.invalid && form.get('correoElectronico')?.touched, 'has-success': form.get('correoElectronico')?.valid }">
+                            <label for="correoElectronico">
+                                <i class="fas fa-envelope"></i> <!-- Icono de sobre de correo -->
+                                <small><strong class="text-muted"> Correo Electrónico</strong></small>
+                            </label>
+                            <input class="form-control" formControlName="correoElectronico" type="email"
+                                placeholder="Correo Electrónico" [required]="true" />
+                            <div *ngIf="form.get('correoElectronico')?.invalid && form.get('correoElectronico')?.touched"
+                                class="text-danger">
+                                <div *ngIf="form.get('correoElectronico')?.errors?.['required']">Se requiere campo.
+                                </div>
+                                <div *ngIf="form.get('correoElectronico')?.errors?.['email']">Formato de correo
+                                    electrónico
+                                    inválido.</div>
+                            </div>
+                        </div>
+                        <div class="form-group"
+                            [ngClass]="{ 'has-danger': form.get('documentosAdjuntos')?.invalid && form.get('documentosAdjuntos')?.touched, 'has-success': form.get('documentosAdjuntos')?.valid }">
+                            <label for="documentosAdjuntos">
+                                <i class="fas fa-file"></i> <!-- Icono de archivo -->
+                                <small><strong class="text-muted"> Documentos Requeridos (adjuntar)</strong></small>
+                            </label>
+                            <input type="file" formControlName="documentosAdjuntos" class="form-control-file" multiple
+                                required />
+                            <div *ngIf="form.get('documentosAdjuntos')?.invalid && form.get('documentosAdjuntos')?.touched"
+                                class="text-danger">
+                                Se requiere campo.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <input type="checkbox" formControlName="terms" (change)="toggleTermsAccepted()">
+                          Acepto los términos y condiciones
+                        </div>
+
+                        <div *ngIf="termsAccepted">
+                          <div *ngIf="form.get('terms')?.errors && form.get('terms')?.touched">
+                            <small *ngIf="form.get('terms')?.hasError('requiredTrue')">Debe aceptar los términos y condiciones</small>
+                          </div>
+
+                          <div *ngIf="form.get('terms')?.value">
+                            <re-captcha (resolved)="onRecaptchaResolved($event)" siteKey="tu_site_key"></re-captcha>
+                          </div>
+                          <button type="submit" [disabled]="form.invalid || !recaptchaResolved">Enviar</button>                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

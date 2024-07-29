@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" [class.active]="isNavActive" id="navbar">
+  <a class="navbar-brand" routerLink="/">
+    <i class="fas fa-home"></i> ESPE M2
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link">
+          <i class="fas fa-life-ring"></i>
+        </a>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/solicitante']" routerLinkActive="active">
+          <i class="fas fa-user-edit"></i> Solicitante
+        </a>
+      </li>
+      <!-- Mostrar usuario logueado -->
+      <li class="nav-item" *ngIf="loggedInUser">
+        <span class="nav-link">
+          <i class="fas fa-user"></i> {{ loggedInUser }}
+        </span>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">
+          <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Cards in the Center -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3>Misión</h3>
+        </div>
+        <div class="card-body">
+          <p class="card-text">Nuestra misión en TerraVende es facilitar el acceso a propiedades de calidad a nuestros clientes, ofreciendo terrenos que cumplen con los más altos estándares de ubicación, infraestructura y valor. Nos comprometemos a proporcionar un servicio excepcional, guiando a nuestros clientes a través de cada paso del proceso de compra para asegurar su satisfacción y confianza en nuestra experiencia</p>
+        </div>
+        <div class="card-footer text-muted">
+          &copy; 2024 Land Manager
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3>Visión</h3>
+        </div>
+        <div class="card-body">
+          <p class="card-text">"Nos visualizamos como líderes en el mercado de bienes raíces, reconocidos por nuestra integridad, profesionalismo y el valor excepcional que aportamos a cada transacción. Buscamos expandir nuestra presencia nacional e internacionalmente, estableciendo relaciones duraderas con nuestros clientes y contribuyendo al desarrollo sostenible de comunidades mediante la venta responsable y ética de terrenos."</p>
+        </div>
+        <div class="card-footer text-muted">
+          &copy; 2024 Land Manager
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="text-white text-center py-3">
+  <div class="container">
+    <h5>Elabodorado por ITIN ESPE 2024</h5>
+    <p>&copy; 2024 ESPE. Todos los derechos reservados. Equipo Land Manager</p>
+  </div>
+</footer>

@@ -1,0 +1,107 @@
+html {
+  height: 100%;
+}
+
+head,
+body {
+  background-color: #BA68C8;
+}
+
+.box1 {
+  background-color: #046392;
+  color: white;
+}
+
+
+.box1 {
+  height: 1000px;
+}
+
+.heading {
+  font-weight: 900;
+}
+
+.card-header {
+  margin-top: 0px;
+  padding-left: 10px;
+}
+
+.form-group > input {
+  border: none;
+  border-bottom: 1px solid lightgray;
+}
+
+.form-group > input::placeholder {
+  color: rgb(131, 178, 244);
+  font-size: 15px;
+}
+
+input.focus,
+input:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.form-group > input:hover {
+  border-bottom: 1px solid lightskyblue;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid lightgray;
+}
+
+.btn {
+  height: 60px;
+  background-color: #00B8D4;
+  color: white;
+}
+
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.card {
+  border-radius: 10px; /* Ajusta el radio de los bordes de la tarjeta */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+}
+
+.card-header {
+  border-radius: 10px 10px 0 0; /* Ajusta el radio de los bordes de la cabecera de la tarjeta */
+}
+
+.form-group {
+  margin-bottom: 1.5rem; /* Ajusta el espacio entre los elementos del formulario */
+}
+
+.btn {
+  border-radius: 5px; /* Ajusta el radio de los bordes del botón */
+  font-weight: bold; /* Hace que el texto del botón sea más visible */
+}
+
+.btn:hover {
+  background-color: #008cba; /* Cambia el color de fondo del botón cuando se pasa el mouse */
+}
+/* Estilos para campos inválidos */
+.has-danger .form-control {
+  border-color: red;
+}
+.has-danger .form-control:focus {
+  border-color: red;
+  box-shadow: none;
+}
+
+/* Estilos para campos válidos */
+.has-success .form-control {
+  border-color: green;
+}
+.has-success .form-control:focus {
+  border-color: green;
+  box-shadow: none;
+}
+
+.form-group label {
+  margin-right: 40px; /* Ajusta el margen derecho según tu preferencia */
+}

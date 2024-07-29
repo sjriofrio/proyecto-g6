@@ -1,0 +1,180 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <div class="navbar-logo">
+
+    </div>
+    <div class="navbar-links">
+      <ul>
+        <button class="btn btn-secondary mt-4" (click)="goBack()">
+          <i class="fas fa-arrow-left"></i> Regresar
+        </button>
+      </ul>
+    </div>
+    <a class="btn custom-btn mt-3" routerLink="/uplaod-comprobante">
+      Enviar selección
+    </a>
+  </div>
+</nav>
+    <h2>Bienvenido al Catálogo de Land Manager</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2 col-md-4">
+      <div class="property-card">
+        <div class="property-image">
+          <img src="/imagen2.jpg" alt="Property Image">
+        </div>
+        <div class="property-details">
+          <div class="property-price">{{ property.price }}</div>
+          <div class="property-location">{{ property.location }}</div>
+          <div class="property-address">{{ property.address }}</div>
+          <div class="property-area">{{ property.area }}</div>
+          <div class="property-description">{{ property.description }}</div>
+          <div class="property-features">
+            <div *ngFor="let feature of property.features" class="property-feature">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 14.5L14.5 8L8 1.5L1.5 8L8 14.5ZM8 0.5C3.6 0.5 0.5 3.6 0.5 8C0.5 12.4 3.6 15.5 8 15.5C12.4 15.5 15.5 12.4 15.5 8C15.5 3.6 12.4 0.5 8 0.5Z" fill="#FFC107" />
+              </svg>
+              {{ feature }}
+            </div>
+          </div>
+          <div class="property-actions">
+            <button class="property-action" (click)="onContactClick()">
+              <i class="fas fa-envelope"></i> Contactar
+            </button>
+            <button class="property-action" (click)="onWhatsAppClick()">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </button>
+            <button class="property-action" (click)="onFavoriteClick()">
+              <i class="far fa-heart"></i> Favorito
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="property-card">
+      <div class="property-image">
+          <img src="/imagen2.jpg" alt="Property Image">
+          <button class="arrow-left">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.4142 1.41421L10.9999 0L4.9999 6L0.9999 2L1.41421 1.41421L7.41421 7.41421H1L1 15H7.41421L1.41421 15L0.9999 16L4.9999 10L10.9999 14L12.4142 12.5858L7.41421 7.58579H15L15 1L7.41421 7.41421L12.4142 1.41421Z" fill="#000000" />
+              </svg>
+          </button>
+          <button class="arrow-right">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.58579 14.5858L5.00008 16L11.0001 10L15.0001 14L14.5858 14.5858L8.58579 8.58579H15L15 0H8.58579L14.5858 0L15.0001 0.99992L11.0001 6L5.00008 2L3.58579 1.41421L8.58579 7.41421H1L1 15H8.58579L3.58579 14.5858Z" fill="#000000" />
+              </svg>
+          </button>
+      </div>
+      <div class="property-details">
+          <div class="property-price">{{ property1.price }}</div>
+          <div class="property-location">{{ property1.location }}</div>
+          <div class="property-address">{{ property1.address }}</div>
+          <div class="property-area">{{ property1.area }}</div>
+          <div class="property-description">{{ property1.description }}</div>
+          <div class="property-features">
+              <div *ngFor="let feature of property1.features" class="property-feature">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 14.5L14.5 8L8 1.5L1.5 8L8 14.5ZM8 0.5C3.6 0.5 0.5 3.6 0.5 8C0.5 12.4 3.6 15.5 8 15.5C12.4 15.5 15.5 12.4 15.5 8C15.5 3.6 12.4 0.5 8 0.5Z" fill="#FFC107" />
+                  </svg>
+                  {{ feature }}
+              </div>
+          </div>
+          <div class="property-actions">
+              <button class="property-action" (click)="onContactClick()">Contactar</button>
+              <button class="property-action" (click)="onWhatsAppClick()">WhatsApp</button>
+              <button class="property-action" (click)="onFavoriteClick()">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 21.3542C17.5423 21.3542 21.3542 17.5423 21.3542 12C21.3542 6.45771 17.5423 2.6458 12 2.6458C6.45771 2.6458 2.6458 6.45771 2.6458 12C2.6458 17.5423 6.45771 21.3542 12 21.3542ZM12 4.24264C15.3284 4.24264 18.2426 7.15684 18.2426 12C18.2426 16.8432 15.3284 19.7574 12 19.7574C8.6716 19.7574 5.75736 16.8432 5.75736 12C5.75736 7.15684 8.6716 4.24264 12 4.24264ZM12 16.5858C13.1046 16.5858 14.0736 15.6168 14.0736 14.5122C14.0736 13.4076 13.1046 12.4386 12 12.4386C10.8954 12.4386 9.92639 13.4076 9.92639 14.5122C9.92639 15.6168 10.8954 16.5858 12 16.5858Z" fill="#000000" />
+                  </svg>
+              </button>
+          </div>
+      </div>
+  </div>
+
+  <div class="property-card">
+      <div class="property-image">
+          <img src="/imagen2.jpg" alt="Property Image">
+          <button class="arrow-left">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.4142 1.41421L10.9999 0L4.9999 6L0.9999 2L1.41421 1.41421L7.41421 7.41421H1L1 15H7.41421L1.41421 15L0.9999 16L4.9999 10L10.9999 14L12.4142 12.5858L7.41421 7.58579H15L15 1L7.41421 7.41421L12.4142 1.41421Z" fill="#000000" />
+              </svg>
+          </button>
+          <button class="arrow-right">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.58579 14.5858L5.00008 16L11.0001 10L15.0001 14L14.5858 14.5858L8.58579 8.58579H15L15 0H8.58579L14.5858 0L15.0001 0.99992L11.0001 6L5.00008 2L3.58579 1.41421L8.58579 7.41421H1L1 15H8.58579L3.58579 14.5858Z" fill="#000000" />
+              </svg>
+          </button>
+      </div>
+      <div class="property-details">
+          <div class="property-price">{{ property2.price }}</div>
+          <div class="property-location">{{ property2.location }}</div>
+          <div class="property-address">{{ property2.address }}</div>
+          <div class="property-area">{{ property2.area }}</div>
+          <div class="property-description">{{ property2.description }}</div>
+          <div class="property-features">
+              <div *ngFor="let feature of property2.features" class="property-feature">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 14.5L14.5 8L8 1.5L1.5 8L8 14.5ZM8 0.5C3.6 0.5 0.5 3.6 0.5 8C0.5 12.4 3.6 15.5 8 15.5C12.4 15.5 15.5 12.4 15.5 8C15.5 3.6 12.4 0.5 8 0.5Z" fill="#FFC107" />
+                  </svg>
+                  {{ feature }}
+              </div>
+          </div>
+          <div class="property-actions">
+              <button class="property-action" (click)="onContactClick()">Contactar</button>
+              <button class="property-action" (click)="onWhatsAppClick()">WhatsApp</button>
+              <button class="property-action" (click)="onFavoriteClick()">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 21.3542C17.5423 21.3542 21.3542 17.5423 21.3542 12C21.3542 6.45771 17.5423 2.6458 12 2.6458C6.45771 2.6458 2.6458 6.45771 2.6458 12C2.6458 17.5423 6.45771 21.3542 12 21.3542ZM12 4.24264C15.3284 4.24264 18.2426 7.15684 18.2426 12C18.2426 16.8432 15.3284 19.7574 12 19.7574C8.6716 19.7574 5.75736 16.8432 5.75736 12C5.75736 7.15684 8.6716 4.24264 12 4.24264ZM12 16.5858C13.1046 16.5858 14.0736 15.6168 14.0736 14.5122C14.0736 13.4076 13.1046 12.4386 12 12.4386C10.8954 12.4386 9.92639 13.4076 9.92639 14.5122C9.92639 15.6168 10.8954 16.5858 12 16.5858Z" fill="#000000" />
+                  </svg>
+              </button>
+          </div>
+      </div>
+  </div>
+
+  <div class="property-card">
+      <div class="property-image">
+          <img src="/imagen2.jpg" alt="Property Image">
+          <button class="arrow-left">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.4142 1.41421L10.9999 0L4.9999 6L0.9999 2L1.41421 1.41421L7.41421 7.41421H1L1 15H7.41421L1.41421 15L0.9999 16L4.9999 10L10.9999 14L12.4142 12.5858L7.41421 7.58579H15L15 1L7.41421 7.41421L12.4142 1.41421Z" fill="#000000" />
+              </svg>
+          </button>
+          <button class="arrow-right">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.58579 14.5858L5.00008 16L11.0001 10L15.0001 14L14.5858 14.5858L8.58579 8.58579H15L15 0H8.58579L14.5858 0L15.0001 0.99992L11.0001 6L5.00008 2L3.58579 1.41421L8.58579 7.41421H1L1 15H8.58579L3.58579 14.5858Z" fill="#000000" />
+              </svg>
+          </button>
+      </div>
+      <div class="property-details">
+          <div class="property-price">{{ property3.price }}</div>
+          <div class="property-location">{{ property3.location }}</div>
+          <div class="property-address">{{ property3.address }}</div>
+          <div class="property-area">{{ property3.area }}</div>
+          <div class="property-description">{{ property3.description }}</div>
+          <div class="property-features">
+              <div *ngFor="let feature of property3.features" class="property-feature">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 14.5L14.5 8L8 1.5L1.5 8L8 14.5ZM8 0.5C3.6 0.5 0.5 3.6 0.5 8C0.5 12.4 3.6 15.5 8 15.5C12.4 15.5 15.5 12.4 15.5 8C15.5 3.6 12.4 0.5 8 0.5Z" fill="#FFC107" />
+                  </svg>
+                  {{ feature }}
+              </div>
+          </div>
+          <div class="property-actions">
+            <button class="property-action" (click)="onContactClick()">
+              <i class="fas fa-envelope"></i> Contactar
+            </button>
+               <button class="property-action" (click)="onWhatsAppClick()">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </button>
+              <button class="property-action" (click)="onFavoriteClick()">
+                <i class="far fa-heart"></i> Favorito
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 21.3542C17.5423 21.3542 21.3542 17.5423 21.3542 12C21.3542 6.45771 17.5423 2.6458 12 2.6458C6.45771 2.6458 2.6458 6.45771 2.6458 12C2.6458 17.5423 6.45771 21.3542 12 21.3542ZM12 4.24264C15.3284 4.24264 18.2426 7.15684 18.2426 12C18.2426 16.8432 15.3284 19.7574 12 19.7574C8.6716 19.7574 5.75736 16.8432 5.75736 12C5.75736 7.15684 8.6716 4.24264 12 4.24264ZM12 16.5858C13.1046 16.5858 14.0736 15.6168 14.0736 14.5122C14.0736 13.4076 13.1046 12.4386 12 12.4386C10.8954 12.4386 9.92639 13.4076 9.92639 14.5122C9.92639 15.6168 10.8954 16.5858 12 16.5858Z" fill="#000000" />
+                </svg>
+              </button>
+          </div>
+      </div>
+
+  </div>
+ <!-- Footer -->
